@@ -41,15 +41,15 @@ docker-compose up
   poetry shell
   ```
 - Install the dependencies:
+
   ```
   poetry install
   ```
 
-Then start API running:
-
-```
-make run-server
-```
+- Then start API running:
+  ```
+  make run-server
+  ```
 
 ## Tests
 
