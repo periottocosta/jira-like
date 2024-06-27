@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    env_file:
+      - .env
+  web:
+    build: .
+    command: [
+      "bash", "-c",
+      "python manage.py makemigrations && \
+      python manage.py migrate && \
+      python manage.py makemigrations clients && \
+      python manage.py migrate clients && \
+      python manage.py makemigrations projects && \
+      python manage.py migrate projects && \
+      python manage.py makemigrations tasks && \
+      python manage.py migrate tasks && \
+      python manage.py runserver 0.0.0.0:8000"
+    ]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
