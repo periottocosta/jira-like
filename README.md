@@ -3,10 +3,21 @@
 Django rest API integrated with Postgres and Docker.
 ​
 
+- [Config](#config)
 - [Run the application](#running)
 - [Tests](#tests)
 - [Documentation](#documentation)
   ​
+
+## Config
+
+Create a `.env` file with this content:
+
+```
+POSTGRES_DB=myproject_db
+POSTGRES_USER=myproject_user
+POSTGRES_PASSWORD=myproject_password
+```
 
 ## Running
 
